@@ -1,0 +1,7 @@
+defaults:
+    - _self_
+    - model_module: finetune
+    - data_module: base
+    - callbacks: finetune
+    - logger: tensorboard
+    - strategy: deepspeed

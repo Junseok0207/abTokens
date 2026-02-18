@@ -1,0 +1,14 @@
+num_workers: 0
+prefetch_factor: null
+data_path: ${..default_data_dir}
+data_version: complex
+data_name: RAbDDataset #CASP14Dataset
+target_field: null
+filter_length: 1024 #1024 #2048 #600
+truncation_length: 5000
+multi_label: false
+is_global_or_local: "local"
+pdb_data_dir: null # Required
+use_continuous: false
+use_sequence: false
+debug: false

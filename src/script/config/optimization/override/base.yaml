@@ -1,0 +1,6 @@
+#multiply the scheduler by this amount
+mult_factor: 1.0
+
+#add this amount to the global step
+#can be positive or negative
+add_index: 0 

@@ -1,0 +1,43 @@
+defaults:
+    - _self_
+    - trainer: base
+    - lightning: pretrain
+    - data: pretrain_pdb
+    - optimization: base
+    - autorestart: base
+model:
+    class_name: "VQVAEModel"
+    pretrained_ckpt_path: "" # where to load the pretrained pLM
+    ckpt_path: null
+    quantizer:
+        quantizer_type: StraightThroughQuantizer
+        loss_weight:
+            commitment_loss_weight: 0.25
+            quantization_loss_weight: 1.0
+            reconstruction_loss_weight: 1.0
+        codebook_size: 512
+        codebook_embed_size: 1024
+        _need_init: true
+        freeze_codebook: false
+        use_linear_project: false
+    encoder:
+        d_model: 1024
+        n_heads: 1
+        v_heads: 128
+        n_layers: 2
+        d_out: 128
+    decoder:
+        d_model: 1024
+        n_heads: 16
+        n_layers: 8
+deepspeed_path: src/script/config/deepspeed/32_stage2.json
+default_data_dir: null
+tokenizer: null
+max_steps: 10000
+experiment_name: test # used for tensorboard
+run_name: test_run
+validate_only: false
+test_only: false
+
+save_dir_path: "" # would be indicated during running
+tokenizer_device: "cuda" # or "cpu": where to put the tokenizer.tokenizer_encoder. 

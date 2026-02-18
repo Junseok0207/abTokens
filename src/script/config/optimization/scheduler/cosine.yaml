@@ -1,0 +1,6 @@
+_target_: util.get_cosine_schedule_with_warmup
+optimizer: null #fill at runtime
+min_ratio: 0.1
+plateau_ratio: 0.1
+num_warmup_steps: 200
+num_training_steps: ${...max_steps} #get value via interpolation

@@ -1,0 +1,5 @@
+_target_: model_module.PlModel
+#used as placeholders
+py_logger: null
+optimizer_cfg: null
+model_cfg: null

@@ -1,0 +1,6 @@
+_target_: pytorch_lightning.strategies.DeepSpeedStrategy
+# config path required to use deepspeed config json path
+# used for optimized Zero-2D internal version
+config: ${...deepspeed_path} 
+# Initialize directly on GPUs instead of CPU (ZeRO-3)
+remote_device: null

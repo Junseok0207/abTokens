@@ -1,0 +1,7 @@
+defaults:
+    - _self_
+    - model_module: pretrain
+    - data_module: base
+    - callbacks: base
+    - logger: tensorboard
+    - strategy: deepspeed

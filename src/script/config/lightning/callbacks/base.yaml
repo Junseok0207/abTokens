@@ -1,0 +1,18 @@
+checkpoint:
+    _target_: pytorch_lightning.callbacks.ModelCheckpoint
+    every_n_train_steps: null
+    every_n_epochs: 1
+    save_top_k: 3
+    monitor: "validation_f1_score"
+    mode: "max"
+    filename: "{epoch}-{step}-{validation_f1_score:.2f}"
+    save_last: True
+    dirpath: null
+
+lr_monitor:
+    _target_: pytorch_lightning.callbacks.LearningRateMonitor
+    logging_interval: "step"
+
+progress_bar:
+    _target_: pytorch_lightning.callbacks.progress.TQDMProgressBar
+    refresh_rate: 10

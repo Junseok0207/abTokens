@@ -1,0 +1,11 @@
+num_workers: 0
+prefetch_factor: null
+data_path: ${..default_data_dir}/data/pretrain
+data_version: mmcif_files_filtered_subsample1.5
+data_name: PretrainPDBDataset
+filter_length: 512
+truncation_length: 512
+pdb_data_dir: null # required
+fast_dev_run: false
+use_continuous: false
+use_sequence: false
